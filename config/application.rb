@@ -18,6 +18,7 @@ module CatalystConnectionsApi
         controller_specs: false,
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
+      g.orm :active_record, primary_key_type: :uuid
     end
 
     # Initialize configuration defaults for originally generated Rails version.
