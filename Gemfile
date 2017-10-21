@@ -26,6 +26,7 @@ gem 'graphql'
 gem 'koala'
 gem 'pg'
 gem 'pundit'
+gem 'rack-cors', require: 'rack/cors'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development do
   gem 'better_errors'
