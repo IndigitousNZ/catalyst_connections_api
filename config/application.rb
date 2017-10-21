@@ -20,6 +20,8 @@ module CatalystConnectionsApi
       g.orm :active_record, primary_key_type: :uuid
     end
 
+    config.assets.enabled = false
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
