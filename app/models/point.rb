@@ -4,7 +4,8 @@ class Point < ApplicationRecord
   before_save :update_coordinates
 
   def self.nearby(current_user, distance)
-    where("ST_DWithin(points.coordinates, ST_GeographyFromText('SRID=4326;POINT(:longitude :latitude)'), :distance)",
+    where('ST_DWithin(points.coordinates::geography,'\
+          "ST_GeographyFromText('SRID=4326;POINT(:longitude :latitude)')::geography, :distance)",
           longitude: current_user.point.longitude,
           latitude: current_user.point.latitude,
           distance: distance)

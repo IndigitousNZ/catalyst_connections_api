@@ -9,7 +9,7 @@ Types::QueryType = GraphQL::ObjectType.define do
 
   connection :points, Types::PointType.connection_type do
     argument :distance, types.Float
-    resolve ->(_obj, args, ctx) { Point.nearby(ctx[:current_user], args[:distance] || 5000) }
+    resolve ->(_obj, args, ctx) { Point.nearby(ctx[:current_user], args[:distance] || 400) }
   end
 
   field :node, GraphQL::Relay::Node.field
