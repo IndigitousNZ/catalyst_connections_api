@@ -8,7 +8,7 @@ class Point < ApplicationRecord
           "ST_GeographyFromText('SRID=4326;POINT(:longitude :latitude)')::geography, :distance)",
           longitude: current_user.point.longitude,
           latitude: current_user.point.latitude,
-          distance: distance)
+          distance: distance).where.not(resource: current_user)
   end
 
   def latitude
